@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RoadToTypeScript</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="home">RoadToTypeScript</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">ホーム</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>メモ</h2>
+        <h3>tsconfig.json</h3>
+        <article>
+          <p>TypeScriptのコンパイル設定を記述するファイルです。</p>
+          <pre><code>
+{
+  "compilerOptions": {
+    "target": "es2015"
+  }
+}
+          </code></pre>
+          <p>
+            上記で、コンパイル後のJavaScriptのバージョンをECMAScript2015に指定できます。
+            指定しないとデフォルトでES5になります。
+          </p>
+          <p>"outDir": "dist",</p>
+          <p>
+            この設定により、コンパイル後のJavaScriptファイルがdistディレクトリに出力されます。
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Road-To-TypeScript</p>
+    </footer>
+  </body>
+</html>
