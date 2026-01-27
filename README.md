@@ -11,7 +11,7 @@ This repository is my TypeScript practice log.
 ## folder structure
 
 - src: TypeScriptのソースコードが格納されています。
-- dist: コンパイルされたJavaScriptコードが格納されます。
+- dist: コンパイルされたJavaScriptコードが格納されます。本リポジトリは学習目的のため、コンパイル後のコードも確認できるよう格納しております。
 - docs: GitHub Pages用のプロジェクトサイトの内容が格納されています。
 
 ## References
