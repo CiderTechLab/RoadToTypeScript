@@ -1,4 +1,10 @@
 @charset "UTF-8";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+a {
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: none;
+  color: deepskyblue;
+}

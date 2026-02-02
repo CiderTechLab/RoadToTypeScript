@@ -4,53 +4,150 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- link rel="stylesheet" href="style.css" -->
+    <link rel="stylesheet" href="style.css" />
     <title>RoadToTypeScript</title>
   </head>
   <body>
-    <header>
-      <h1 class="text-3xl font-bold underline">RoadToTypeScript</h1>
-      <nav>
-        <ul>
-          <li><a href="#home">ホーム</a></li>
-        </ul>
-      </nav>
-    </header>
+    <div class="layout">
+      <header class="fixed w-full p-4 flex items-center gap-8 text-white bg-gradient-to-r from-cyan-400 to-blue-900">
+        <h1 class="text-4xl font-bold">RoadToTypeScript</h1>
+        <nav>
+          <ul class="flex gap-4">
+            <li><a href="#home">ホーム</a></li>
+          </ul>
+        </nav>
+      </header>
 
-    <main>
-      <section>
-        <h2>メモ</h2>
-        <h3>tsconfig.json</h3>
-        <article>
-          <p>TypeScriptのコンパイル設定を記述するファイルです。</p>
-          <pre><code>
+      <main class="pt-32 pb-20 p-4">
+        <section>
+          <h2 class="text-3xl m-4">メモ</h2>
+          <article>
+            <h3 class="text-2xl m-4">tsconfig.json</h3>
+            <p>TypeScriptのコンパイル設定を記述するファイルです。</p>
+            <pre class="bg-black text-white p-4 rounded overflow-x-auto"><code>
 {
   "compilerOptions": {
     "target": "es2015"
   }
 }
-          </code></pre>
-          <p>
-            上記で、コンパイル後のJavaScriptのバージョンをECMAScript2015に指定できます。
-            指定しないとデフォルトでES5になります。
-          </p>
-          <p>"outDir": "dist",</p>
-          <p>
-            この設定により、コンパイル後のJavaScriptファイルがdistディレクトリに出力されます。
-          </p>
-        </article>
-      </section>
-      <section>
-        <h2>TailWind css</h2>
-        <p>このページではTailWind cssを試験的に導入しております。</p>
-        <pre><code>
-<script src="https://cdn.tailwindcss.com"></script>
-        </code></pre>
-        <p>上記の記述をhead内に行い、CDN方式で使用しております。</p>
-      </section>
-    </main>
-    <footer>
-      <p>&copy; 2026 Road-To-TypeScript</p>
-    </footer>
+            </code></pre>
+            <p>
+              上記で、コンパイル後のJavaScriptのバージョンをECMAScript2015に指定できます。
+              <strong>指定しないとデフォルトでES5になります。</strong>
+            </p>
+            <p>"outDir": "dist",</p>
+            <p>
+              この設定により、コンパイル後のJavaScriptファイルがdistディレクトリに出力されます。
+            </p>
+          </article>
+        </section>
+        <section>
+          <h2 class="text-3xl m-4">TailWind css</h2>
+          <article>
+            <p>このページではTailWind cssを試験的に導入しております。</p>
+            <pre class="bg-black text-white p-4 rounded overflow-x-auto"><code>
+&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+            </code></pre>
+          </article>
+        </section>
+        <section>
+          <h2 class="text-3xl m-4">GitHub IOでTailWind cssを使う</h2>
+          <article>
+            <h3 class="text-2xl m-4">1. ローカル環境でセットアップ</h3>
+            <pre class="bg-black text-white p-4 rounded overflow-x-auto"><code>npm init -y
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+            </code></pre>
+
+            <h3 class="text-2xl m-4">2. tailwind.config.js を修正</h3>
+            <pre class="bg-black text-white p-4 rounded overflow-x-auto"><code>/**
+ * @type {import('tailwindcss').Config}
+ */
+export default {
+  content: [
+    "./docs/**/*.{html,js}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+            </code></pre>
+
+            <h3 class="text-2xl m-4">3. input.css を作成</h3>
+            <pre class="bg-black text-white p-4 rounded overflow-x-auto"><code>@tailwind base;
+@tailwind components;
+@tailwind utilities;
+            </code></pre>
+
+            <h3 class="text-2xl m-4">4. package.json にビルドスクリプト追加</h3>
+            <pre class="bg-black text-white p-4 rounded overflow-x-auto"><code>{
+  "scripts": {
+    "build": "tailwindcss -i ./input.css -o ./docs/output.css"
+  }
+}
+            </code></pre>
+
+            <h3 class="text-2xl m-4">5. GitHub Actions ワークフロー作成</h3>
+            <pre class="bg-black text-white p-4 rounded overflow-x-auto"><code>name: Build and Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - run: npm install
+      - run: npm run build
+      - uses: actions/upload-pages-artifact@v2
+        with:
+          path: './docs'
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
+            </code></pre>
+
+            <h3 class="text-2xl m-4">6. index.htmlを修正</h3>
+            <pre class="bg-black text-white p-4 rounded overflow-x-auto"><code>&lt;head&gt;
+  &lt;meta charset="UTF-8" /&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+  &lt;link rel="stylesheet" href="output.css" /&gt;
+  &lt;link rel="stylesheet" href="style.css" /&gt;
+  &lt;title&gt;RoadToTypeScript&lt;/title&gt;
+&lt;/head&gt;
+            </code></pre>
+            <p>CDNスクリプトを削除して、生成された<code>output.css</code>を読み込みます。</p>
+
+            <h3 class="text-2xl m-4">7. GitHub設定</h3>
+            <p>GitHub リポジトリ &gt; Settings &gt; Pages で以下を選択：</p>
+            <ul>
+              <li>Source: <code>GitHub Actions</code></li>
+            </ul>
+            <p>これで、mainブランチにpushするたびに自動的にTailwindがビルドされ、デプロイされます。</p>
+          </article>
+        </section>
+      </main>
+
+      <footer class="fixed bottom-0 w-full p-4 bg-gradient-to-r from-cyan-400 to-blue-900 text-white flex justify-end">
+        <p>&copy; 2026 RoadToTypeScript by <a href="https://cidertechlab.github.io/">CiderTechLab</a></p>
+      </footer>
+    </div>
   </body>
 </html>

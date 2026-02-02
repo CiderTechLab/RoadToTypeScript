@@ -8,5 +8,24 @@
   },
   "scripts": {
     "build-css": "tailwindcss build src/style.css -o dist/style.css"
-  }
+  },
+  "name": "roadtotypescript",
+  "version": "1.0.0",
+  "description": "ようこそ「RoadToTypeScript」へ！\r このリポジトリは私のTypeScript練習ログです。",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CiderTechLab/RoadToTypeScript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/CiderTechLab/RoadToTypeScript/issues"
+  },
+  "homepage": "https://github.com/CiderTechLab/RoadToTypeScript#readme"
 }
