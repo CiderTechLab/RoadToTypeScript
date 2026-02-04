@@ -12,15 +12,15 @@ This repository is my TypeScript practice log.
 
 このリポジトリには、TypeScript Handbookを使った体系的な学習計画が含まれています。
 
-### 学習ガイド
+### Learning Guide
 
-- **[Learning_Plan.ts](src/Learning_Plan.ts)** - 4週間の詳細な学習計画
+- **[Learning_Plan.ts](src/Learning_Plan.md)** - 4週間の詳細な学習計画
   - 週ごとの学習内容とトピック
   - 各章に対応するファイル名
   - 学習チェックリスト
   - 5週目以降の発展的な学習計画
 
-- **[Learning_Method_Guide.ts](src/Learning_Method_Guide.ts)** - 効果的な学習方法ガイド
+- **[Learning_Method_Guide.ts](src/Learning_Method_Guide.md)** - 効果的な学習方法ガイド
   - 毎日の学習ルーティン
   - .tsファイルの作成テンプレート
   - コメントの書き方のベストプラクティス
@@ -28,13 +28,17 @@ This repository is my TypeScript practice log.
   - よくあるつまずきポイントと対策
   - FAQ
 
-これらのファイルを参照して、TypeScriptの学習を進めてください！
+これらのファイルを参照して、TypeScriptの学習を進めています。
 
-## folder structure
+## Folder Structure
 
-- src: TypeScriptのソースコードが格納されています。
-- dist: コンパイルされたJavaScriptコードが格納されます。本リポジトリは学習目的のため、コンパイル後のコードも確認できるよう格納しております。
-- docs: GitHub Pages用のプロジェクトサイトの内容が格納されています。
+- src
+  - TypeScriptのソースコードが格納されています。
+- dist
+  - コンパイルされたJavaScriptコードが格納されます。本リポジトリは学習目的のため、コンパイル後のコードも確認できるよう格納しております。
+- docs
+  - GitHub Pages用のプロジェクトサイトの内容が格納されています。
+  - 学習計画のファイルも格納されています。
 
 ## References
 
