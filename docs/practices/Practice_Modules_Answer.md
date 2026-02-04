@@ -41,4 +41,4 @@ export * from './utils';
 import type { User } from './types';
 ```
 
-**次:** [Practice_Type_Manipulation](./Practice_Type_Manipulation)
+**次:** [Practice_Type_Manipulation](./Practice_Type_Manipulation.md)

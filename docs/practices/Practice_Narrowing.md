@@ -126,4 +126,4 @@ function handleResponse(response: Response) {
 
 ---
 
-[正答と解説ページ](./Practice_Narrowing_Answer)
+[正答と解説ページ](./Practice_Narrowing_Answer.md)

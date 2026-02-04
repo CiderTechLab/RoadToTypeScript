@@ -38,4 +38,4 @@ function multiply(base: number, ...factors: number[]): number {
 }
 ```
 
-**次:** [Practice_Object_Types](./Practice_Object_Types)
+**次:** [Practice_Object_Types](./Practice_Object_Types.md)

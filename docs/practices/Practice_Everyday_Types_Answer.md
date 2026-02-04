@@ -243,7 +243,7 @@ type ID = number | string;
 
 // Intersection型を定義できる
 type Animal = { name: string };
-type Mammal = Animal & { warm Blooded: true };
+type Mammal = Animal & { warmBlooded: true };
 
 // Mapped Typesを使える
 type ReadOnly<T> = {
