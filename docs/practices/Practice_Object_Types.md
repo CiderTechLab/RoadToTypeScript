@@ -128,4 +128,4 @@ type ApiResponse<T> = SuccessResponse<T> | ErrorResponse;
 
 ---
 
-[正答と解説ページ](./Practice_Object_Types_Answer)
+[正答と解説ページ](./Practice_Object_Types_Answer.md)

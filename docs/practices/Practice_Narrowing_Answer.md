@@ -76,4 +76,4 @@ function handleResponse(response: Response): string {
 }
 ```
 
-**次:** [Practice_More_on_Functions](./Practice_More_on_Functions)
+**次:** [Practice_More_on_Functions](./Practice_More_on_Functions.md)
